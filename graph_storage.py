@@ -5,6 +5,7 @@ class GraphStorage:
     def __init__(self, path_to_storage_file):
         self.path_to_storage_file = path_to_storage_file
         self.data = self._load_data()
+        self._create_index()
 
 
 
@@ -32,6 +33,12 @@ class GraphStorage:
 
     def get(self, key):
           return self.data.get(key)
+    
+    def _create_index(self):
+         self.index = {}
+         for image_name, triples in self.data.items():
+              for triple in triples:
+                   self.index[tuple(triple)] = image_name
     
 
 if __name__ == "__main__":
