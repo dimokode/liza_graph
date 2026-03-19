@@ -42,8 +42,9 @@ class GraphStorage:
     
 
 if __name__ == "__main__":
-    gs = GraphStorage('db.json')
-    #   gs.put( 'img1', [('кот', 'рама', 'мыть'), ('мама', 'кот', 'гладить')] )
+    gs = GraphStorage('db_rel.json')
+    gs.put( 'rel1', [('трава', 'газон', 'растет')] )
+    gs.put( 'rel2', [('трава', 'поле', 'растет')] )
     #   gs.put( 'img2', [('мальчик1', 'мяч', 'бьет'), ('мяч', 'ворота', 'летит')] )
     # print(gs.get('img3 ааа.jpg'))
     print(gs.data)
